@@ -22,10 +22,13 @@ export async function sendTelegramNotification(order: OrderNotification) {
   const text = [
     `[${siteConfig.name} 신규 문의]`,
     "",
-    `연락처: ${order.phone}`,
-    `내용: ${order.content}`,
-    `지역/주소: ${order.location}`,
-    `희망시간: ${order.preferredAt || "미지정"}`,
+    `연락처 : ${order.phone}`,
+    "",
+    `내용 : ${order.content}`,
+    "",
+    `지역/주소 : ${order.location}`,
+    "",
+    `희망시간 : ${order.preferredAt || "미지정"}`,
   ].join("\n");
 
   const response = await fetch(
